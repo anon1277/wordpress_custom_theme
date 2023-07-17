@@ -14,6 +14,9 @@
      function hack_defecen_features() 
             {
               add_theme_support('title-tag');
+              register_nav_menu('HeaderMenuLocation', 'Header Manu Location');
+              register_nav_menu('FooterLocatiOne', 'Footer Location One');
+              register_nav_menu('FooterLocatitwo', 'Footer Location Two');
             }
 
      add_action('after_setup_theme', 'hack_defecen_features');         

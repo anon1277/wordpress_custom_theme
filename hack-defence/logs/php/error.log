@@ -341,3 +341,15 @@ Stack trace:
 #2 /Users/quriousclick/Local Sites/hack-defence/app/public/index.php(17): require('/Users/quriousc...')
 #3 {main}
   thrown in /Users/quriousclick/Local Sites/hack-defence/app/public/wp-content/themes/hack-defence-theme/page.php on line 47
+[17-Jul-2023 13:06:14 UTC] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function register_nav_menu(), 0 passed in /Users/quriousclick/Local Sites/hack-defence/app/public/wp-content/themes/hack-defence-theme/functions.php on line 17 and exactly 2 expected in /Users/quriousclick/Local Sites/hack-defence/app/public/wp-includes/nav-menu.php:136
+Stack trace:
+#0 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-content/themes/hack-defence-theme/functions.php(17): register_nav_menu()
+#1 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-includes/class-wp-hook.php(308): hack_defecen_features('')
+#2 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-includes/class-wp-hook.php(332): WP_Hook->apply_filters(NULL, Array)
+#3 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#4 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-settings.php(601): do_action('after_setup_the...')
+#5 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-config.php(103): require_once('/Users/quriousc...')
+#6 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-load.php(50): require_once('/Users/quriousc...')
+#7 /Users/quriousclick/Local Sites/hack-defence/app/public/wp-admin/admin-ajax.php(22): require_once('/Users/quriousc...')
+#8 {main}
+  thrown in /Users/quriousclick/Local Sites/hack-defence/app/public/wp-includes/nav-menu.php on line 136
