@@ -19,4 +19,6 @@
               register_nav_menu('FooterLocatitwo', 'Footer Location Two');
             }
 
-     add_action('after_setup_theme', 'hack_defecen_features');         
+     add_action('after_setup_theme', 'hack_defecen_features');   
+     
+  
