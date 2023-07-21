@@ -9,7 +9,7 @@
     <div class="page-banner__content container container--narrow">
         <h1 class="page-banner__title"><?php the_title(); ?></h1>
         <div class="page-banner__intro">
-            <p>Learn how the school of your dreams got started.</p>
+            <p>Learn how the school of your dreams got started dreams got started.</p>
         </div>
     </div>
 </div>
@@ -38,6 +38,35 @@
         <?php the_excerpt();  ?>
         <p><a class="btn btn--blue" href="<?php the_permalink();?>">Continue Reading &raquo;</a></p>
     </div>
+
+    <?php if (has_post_thumbnail()) : ?>
+    <div class="featured-image">
+        <?php the_post_thumbnail(); ?>
+
+        
+    </div>
+<?php endif; ?>
+
+
+<div class="owl-carousel owl-theme">
+    <?php
+    $args = array(
+        'post_type'      => 'attachment',
+        'post_mime_type' => 'image',
+        'post_status'    => 'inherit',
+        'posts_per_page' => 7,
+    );
+
+    $query = new WP_Query($args);
+
+    while ($query->have_posts()) :
+        $query->the_post();
+    ?>
+        <div class="item">
+            <?php echo wp_get_attachment_image(get_the_ID(), 'large'); ?>
+        </div>
+    <?php endwhile; ?>
+</div>
 
     <?php }
     get_footer();

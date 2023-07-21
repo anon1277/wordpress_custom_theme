@@ -12,6 +12,8 @@
     </div>
 </div>
 
+
+
 <div class="container container--narrow page-section">
 
 <?php 
@@ -35,6 +37,16 @@
     echo paginate_links();
 ?>
 </div>
+
+<div class="slider-section">
+  <?php get_template_part('slider'); ?>
+</div
+<?php if (has_post_thumbnail()) : ?>
+    <div class="featured-image">
+        <?php the_post_thumbnail(); ?>
+    </div>
+<?php endif; ?>
+
 <?php    
       get_footer();     
 ?>

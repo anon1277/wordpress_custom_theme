@@ -15,7 +15,7 @@
 </div>
 
 
-
+cscsjlcnkscsjc sjc scjsd 
 
 <div class="container container--narrow page-section">
     <div class="metabox metabox--position-up metabox--with-home-link">
@@ -32,6 +32,12 @@
             <?echo get_the_category_list(' , ') ?>
         <p>
     </div>
+
+    <?php if (has_post_thumbnail()) : ?>
+    <div class="featured-image">
+        <?php the_post_thumbnail(); ?>
+    </div>
+<?php endif; ?>
 
     <div class="generic-content">
         <?php the_excerpt();  ?>

@@ -16,10 +16,25 @@
     <div class="full-width-split__one">
         <div class="full-width-split__inner">
             <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
-            <?php $HomePageEvent = new WP_Query(array(
-                  'posts_per_page' => 2,
-                  'post_type' => 'event'
-                ));
+            <?php $today = date('Ymd');
+                $HomePageEvent = new WP_Query(
+                    array(
+                        'posts_per_page' => -1, 
+                         'post_type' => 'event',
+                         'meta_key' => 'event_date',
+                         'orderby' => 'meta_value_num',
+                         'order' => 'ASC',
+                         'meta_query' =>array(
+                          array(
+                            'key'=> 'event_date',
+                            'compare' => '>=',
+                            'value' => $today ,
+                            'type' => 'numberic'
+                         ) 
+                         )
+                        // 'post_type' => 'page',
+                    )
+                );
                 
                 while($HomePageEvent->have_posts())
                 { 
@@ -69,6 +84,7 @@
             <h2 class="headline headline--small-plus t-center">From Our Blogs</h2>
 
             <?php
+              $today = date('Ymd');
               $HomePagePost = new WP_Query(
                   array(
                       'posts_per_page' => 2 
@@ -188,5 +204,13 @@
         <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]"></div>
     </div>
 </div>
+
+<?php if (has_post_thumbnail()) : ?>
+    <div class="featured-image">
+        <?php the_post_thumbnail(); ?>
+    </div>
+<?php endif; ?>
+
+
 
 <?php get_footer(); ?>
